@@ -58,6 +58,9 @@
 
     // Function to initialize the script when the DOM is ready
     function main() {
+        // Initial update
+        updateCustomCardIssues();
+
         // Create a Mutation Observer to watch for changes in the DOM
         const observer = new MutationObserver((mutationsList, observer) => {
             for(let mutation of mutationsList) {
@@ -69,9 +72,6 @@
 
         // Start observing the document body for added or removed nodes
         observer.observe(document.body, { childList: true, subtree: true });
-
-        // Initial update
-        updateCustomCardIssues();
     }
 
     // Wait for the DOM to be fully loaded before running the script
